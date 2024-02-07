@@ -168,3 +168,9 @@ echo "Index of the maximum value : $maxIndex";
 echo "<br>";
 
 
+$emptyArray = array(2,4,6);
+if (empty($emptyArray)) {
+    echo "The array is empty.";
+} else {
+    echo "The array is not empty.";
+}
