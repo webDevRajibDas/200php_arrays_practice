@@ -174,3 +174,39 @@ if (empty($emptyArray)) {
 } else {
     echo "The array is not empty.";
 }
+
+echo "<br>";
+$array1 = array(1, 2, 3);
+$array2 = array(3, 4, 5);
+$result = array_unique(array_merge($array1, $array2));
+
+
+
+ echo '<pre>';
+ print_r($result);
+ echo '</pre>';
+
+echo "<br>";
+
+
+echo 'Combine two arrays';
+ 
+$array1 = array("a", "b", "c");
+$array2 = array(1, 2, 3);
+$result = array();
+
+foreach($array1 as $key => $value){
+	$result[] = $value;
+	$result[] = $array2[$key];
+	
+}
+
+ echo '<pre>';
+ print_r($result);
+ echo '</pre>';
+ 
+ 
+echo 'Average value of an array';
+$numbers = array(10, 20, 30, 40, 50);
+$average = array_sum($numbers) / count($numbers);
+echo "The average is: $average";
