@@ -210,3 +210,61 @@ echo 'Average value of an array';
 $numbers = array(10, 20, 30, 40, 50);
 $average = array_sum($numbers) / count($numbers);
 echo "The average is: $average";
+
+echo "<br>";
+
+$a = ['56', '66', '', '58', '85', '', '', '76', '', '57'];
+$a = array_filter($a);
+
+if(count($a)){
+	$average = array_sum($a)/count($a);
+	echo "The average (excluding empty values) is approximately: " . $average;
+}else{
+	echo "No valid values to calculate the average.";
+}
+
+
+
+echo "<br>";
+
+
+$array1 = array(1, 2, 3);
+$array2 = array(3, 4, 5);
+$result = array_unique(array_merge($array1, $array2));
+ echo '<pre>';
+ print_r($result);
+ echo '</pre>';
+
+
+
+echo "Count the occurrences of each element in an array";
+
+
+$numbers = array(1, 2, 2, 3, 3, 3, 4, 4, 4, 4);
+$occurences = array_count_values($numbers);
+echo '<pre>';
+print_r($occurences);
+echo '</pre>';
+
+
+$numbers12 = array(1, 2, 2, 3, 3, 3, 4, 4, 4, 4);
+echo sizeof($numbers12);
+
+
+$colors = array("Red", "Green", "Blue");
+$htmlList = '<ul><li>' .implode('</li><li>',$colors).'</li></ul>';
+echo $htmlList;
+
+
+echo 'Combine two associative arrays, preserving keys';
+
+$array1 = array("a" => 1, "b" => 2);
+$array2 = array("b" => 3, "c" => 4);
+$result = $array1 + $array2;
+echo '<pre>';
+print_r($result);
+echo '</pre>';
+
+
+echo'Flip the keys and values of an associative array';
+
