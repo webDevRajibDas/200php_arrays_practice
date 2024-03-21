@@ -6,8 +6,8 @@ echo "Length of the array: $length";
 
 echo '</br>';
 
-$numbers = array(1, 2, 3, 4, 5, 7, 8, 9, 12, 14, 22, 44);
-$sum = array_sum($numbers);
+$numbers1 = array(1, 2, 3, 4, 5, 7, 8, 9, 12, 14, 22, 44);
+$sum = array_sum($numbers1);
 echo "Sum of array elements: $sum";
 echo '</br>';
 
@@ -145,11 +145,11 @@ echo "Active: " . ($decodedDataArray['active'] ? 'Yes' : 'No') . "</br>";
 
 
 foreach ($decodedDataArray['members'] as $member ){
-   echo '<br>'; 
-   echo 'Member Name'.' : '. $member['name'].'</br>';
-   echo 'Member age'.' : '. $member['age'].'</br>';
-   echo 'Member secretIdentity'.' : '. $member['secretIdentity'].'</br>';
-   echo  'Powers : '.implode(', ',$member['powers'])."<br>";
+    echo '<br>'; 
+    echo 'Member Name'.' : '. $member['name'].'</br>';
+    echo 'Member age'.' : '. $member['age'].'</br>';
+    echo 'Member secretIdentity'.' : '. $member['secretIdentity'].'</br>';
+    echo  'Powers : '.implode(', ', $member['powers'])."<br>";
    
 }
 
@@ -163,7 +163,7 @@ echo "<br>";
 
 
 $numbers = array(8, 2, 5, 10, 3);
-$maxIndex = array_search(max($numbers),$numbers);
+$maxIndex = array_search(max($numbers), $numbers);
 echo "Index of the maximum value : $maxIndex";
 echo "<br>";
 
@@ -195,10 +195,10 @@ $array1 = array("a", "b", "c");
 $array2 = array(1, 2, 3);
 $result = array();
 
-foreach($array1 as $key => $value){
-	$result[] = $value;
-	$result[] = $array2[$key];
-	
+foreach ($array1 as $key => $value){
+    $result[] = $value;
+    $result[] = $array2[$key];
+    
 }
 
  echo '<pre>';
@@ -216,11 +216,11 @@ echo "<br>";
 $a = ['56', '66', '', '58', '85', '', '', '76', '', '57'];
 $a = array_filter($a);
 
-if(count($a)){
-	$average = array_sum($a)/count($a);
-	echo "The average (excluding empty values) is approximately: " . $average;
-}else{
-	echo "No valid values to calculate the average.";
+if (count($a)) {
+    $average = array_sum($a)/count($a);
+    echo "The average (excluding empty values) is approximately: " . $average;
+} else {
+    echo "No valid values to calculate the average.";
 }
 
 
@@ -252,7 +252,7 @@ echo sizeof($numbers12);
 
 
 $colors = array("Red", "Green", "Blue");
-$htmlList = '<ul><li>' .implode('</li><li>',$colors).'</li></ul>';
+$htmlList = '<ul><li>' .implode('</li><li>', $colors).'</li></ul>';
 echo $htmlList;
 
 
@@ -267,4 +267,90 @@ echo '</pre>';
 
 
 echo'Flip the keys and values of an associative array';
+
+
+$colors = array(
+    "red" => "apple", 
+    "green" => "lime", 
+    "blue" => "blueberry"
+);
+echo '<pre>';
+print_r($colors);
+echo '</pre>';
+
+
+$flippedArray = array_flip($colors);
+echo '<pre>';
+print_r($flippedArray);
+echo '</pre>';
+
+
+echo "Search for a value in an array and return the corresponding key"."<br>";
+
+$fruits = array("Apple"=>4,"Cherry"=>5,"Banana"=>7);
+$searchValue = 4;
+$key = array_search($searchValue, $fruits);
+echo "The key for value $searchValue is: $key";
+
+
+echo "Extract a slice of an array";
+
+$fruits = array("apple", "banana", "cherry", "date", "elderberry");
+
+
+echo "Find the keys of the top N largest values in an array";
+
+
+$numbers = array(4, 2, 8, 6, 10, 1);
+$topN = 3;
+arsort($numbers);
+$topKeys = array_slice(array_keys($numbers), 0, $topN);
+echo '<pre>';
+print_r($topKeys);
+echo '</pre>';
+
+echo "Find the difference between two arrays, ignoring keys";
+
+$array1 = array("a" => 1, "b" => 2, "c" => 3);
+$array2 = array(1, 2, 4);
+$difference = array_diff($array1, $array2);
+echo '<pre>';
+print_r($difference);
+echo '</pre>';
+
+
+
+echo "Combine two arrays into an associative array";
+
+$keys = array("a", "b", "c");
+$values = array(1, 2, 3);
+
+$combinedArray = array_combine($keys, $values);
+
+echo '<pre>';
+print_r($combinedArray);
+echo '</pre>';
+
+
+$letters = range('A', 'Z');
+echo '<pre>';
+print_r($letters);
+echo '</pre>';
+
+
+echo "Problem 82: Get the first element of an array";
+
+$arrayList = [90,20,50,30,60,70];
+$firstElement = end($arrayList);
+echo '<pre>';
+print_r($firstElement);
+echo '</pre>';
+
+
+echo "Problem 89: Remove the first element from an array";
+$array = array(10, 20, 30, 40, 50);
+array_shift($array);
+print_r($array);
+
+
 
