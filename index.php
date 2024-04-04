@@ -353,4 +353,83 @@ array_shift($array);
 print_r($array);
 
 
+echo "Problem 87: Find the mode of an array";
+
+$numbers = array(1, 2, 3, 3, 4, 4, 4, 5, 5, 5);
+$mode = array_count_values($numbers);
+arsort($mode);
+$mode = key($mode);
+
+echo '<pre>';
+echo "The mode is: $mode";
+echo '</pre>';
+
+
+
+echo '<pre>';
+echo "findLongestWord";
+echo '</pre>';
+
+function findLongestWord($str){
+	$words = explode(" ", $str);
+	
+	$longestWord = "";
+    $maxLength = 0;
+	
+	foreach ($words as $word ){
+		$cleanWord = preg_replace("/[^A-Za-z0-9]/", "", $word);
+		if (strlen($cleanWord) > $maxLength) {
+            $longestWord = $cleanWord;
+            $maxLength = strlen($cleanWord);
+        }
+	}
+	return $longestWord;
+}
+
+$string = "The quick brown fox jumps over the lazy dog.";
+$resultWord = findLongestWord($string);
+
+echo "The longest word in the string is: " . $resultWord;
+echo '</br>';
+
+
+echo "92: Write a PHP script to sort an array in ascending order (alphabetical order)";
+$array = ["banana", "apple", "orange", "grape"];
+$arraySort = sort($array);
+echo '<pre>';
+print_r($arraySort);
+echo '</pre>';
+
+
+echo "explode string into an array";
+$string = "apple,banana,orange";
+
+echo($string);
+
+$array = explode(",", $string);
+echo '<pre>';
+print_r($array);
+echo '</pre>';
+
+
+echo "implode array into a string";
+$array = [1, 2, 3, 4, 5];
+$string2 = implode(",", $array);
+echo $string2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
